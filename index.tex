@@ -1,0 +1,435 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[french]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[standard]{ntheorem}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+%\usepackage{hyperref}
+
+
+\renewcommand{\thesection}{\arabic{section}}
+\definecolor{maroon(html/css)}{rgb}{0.5, 0.0, 0.0}
+\definecolor{red}{rgb}{1.0, 0.0, 0.0}
+\definecolor{red(pigment)}{rgb}{0.93, 0.11, 0.14}
+\definecolor{yellow(pigment)}{rgb}{1.0, 0.5, 0.0}
+
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\newcommand{\hsp}{\hspace{20pt}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{document}
+
+
+\sffamily
+
+
+\begin{titlepage}
+\begin{center}
+%% \includegraphics[scale=1]{entete.png}~\\[1.5cm]
+\textsc{\LARGE Faculté des Sciences et Techniques de Fès}\\[2cm]
+\textsc{\Large Projet de fin d'étude}\\[1.5cm]
+\HRule \\[0.4cm] { \huge \bfseries LES OPERATEURS LINEAIRES BORNES\\[0.4cm] }
+\HRule \\[0.4cm]
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large Azim \textsc{SAIBOU}\\ Année 2023\\
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large \emph{Encadrant :} M. Zakariyae MOUHCINE\\
+\end{flushright}
+\end{minipage}
+\vfill {\large 1\ier{} Avril 2023}
+\end{center}
+\end{titlepage}
+
+
+
+% ------------------------------------------------------------------(1)
+\newpage
+	
+
+\tableofcontents
+\newpage
+
+
+\newtheorem{Def}{Définition}[subsection]
+\newtheorem{Ex}{Exemple}[subsection]
+\newtheorem{The}{Théorème}[subsection]
+\newtheorem{Prop}{Proposion}[subsection]
+\newtheorem{Lem}{Lemme}[subsection]
+\newtheorem{Cor}{Corollaire}[subsection]
+\newtheorem{Rem}{Remarque}[subsection]
+\addto\captionsfrench{\renewcommand\proofname{Demonstration}}
+
+
+
+
+
+
+% --------------------------------------------------------------------------------(page 32)
+% --------------------------------------------------------------------------------(page 32)
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Pour tout $x, y \in E$ , on a \\
+					 $< A_nx,y > = < x,A_ny >$ , pour tout $**$ \\
+En passant a la limite, on obtient \\
+					 $< Ax,y > = \lim_{n\rightarrow \infty} < A_nx,y > = \lim_{n\rightarrow \infty} < a_ny,Ay > = < x,Ay >$ \\
+Ca signifie $A = A^*$ , c'est-a-dire $A$ est un operateur auto-adjoint. \\
+
+Remarque. Soit E un espace de Hilbert. On note $\mathscr{L_{auto}}(E)$ l'ensemble d'operateurs auto-adjoint dans $\mathscr{L}(E)$ .\\
+
+\begin{Cor} Soit E un espace de Hilbert, alors $\mathscr{L_{auto}}(E)$ est un ensemble ferme dans $\mathscr{L}(E)$ \\
+\end{Cor}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Soit $(A_n)_n$ une suite d'operateurs dans $\mathscr{L_{auto}}(E)$ , tel que $(A_n)_n$ converge vers A dans $\mathscr{L}(E)$ , c'est-a-dire \\
+					 $\lim_{n\rightarrow \infty} ||A_n - A|| = 0$ \\
+alors $(A_n)_n$ converge faiblement vers $A \in \mathscr{L_{auto}}(E)$ . Cela signifie que nous avons prouve $\mathscr{L_{auto}}(E)$ est un ensemble ferme dans $\mathscr{L}(E)$.\\
+
+
+\begin{The}Soit $A \in \mathscr{L}(E)$ , alors l'operateur A est auto-adjoint si et seulement si $< Ax,x > \in \mathbb{R}$ .\\
+\end{The}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Soit A est un operateur auto-adjoint, pour tout $x \in E$ , on a \\
+					 $a = < Ax,x > = \overline{< x,Ax >} = \overline{< A^*x,x >} \overline{< Ax,x >} = \overline{a}$ \\
+Comme $a = \overline{a}$ , cela signifie que $a = < Ax,x > \in \mathbb{R}$ \\
+Reciproquement : soit $x,y \in E$ , on pose \\
+					 $a &= < A(x+y),x+y > - < A(x-y),x-y >$ \\
+					 $  &= 2[< Ax,y > + < Ay,x >]$ \\
+
+					 $b &= < A(x+iy),x+iy > - < A(x-iy),x-iy >$ \\
+					 $  &= -2i [< Ay,x > - < Ax,y >]$ \\
+
+
+
+On sait que $< Ax,x > \in \mathbb{R}$ , alors a et b sont reelles. De plus, on a \\
+					 $\frac{a}{4} + \frac{b}{4} i = < Ay,x >$ et $\frac{a}{4} - \frac{b}{4} i = < Ax,y >$ .\\
+Alors \\
+					 $< Ax,y > &= \frac{a}{4} - \frac{b}{4}i = \overline{\frac{a}{4} - \frac{b}{4}i} = \overline{< Ay,x >}$ 
+					 $&= < x,Ay >$ 
+donc A est un operateur auto adjoint.\\
+
+
+\begin{Prop}Soient E, F deux espaces de Hilbert et $A \in \mathscr{L}(E,F)$ . Alors il existe deux operateurs lineaires bornes, auto-adjoints U et V tels que \\
+					 
+					  $A = U + iV$ \\
+
+\end{Prop}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Il suffit de prendre \\
+					 $U = \frac{1}{2} (A + A^*)$ et $V = \frac{1}{2i} (A - A^*)$ .\\
+Alors 
+					 $U^* = \frac{1}{2} (A + A^*)^* = \frac{1}{2} (A^* + A^**) = U$ \\
+De meme $V = V^*$ .\\
+
+
+\begin{Prop} Soient E et F deux espaces de Hilbert et $A \in \mathscr{L}(E)$ . Les conditions suivantes sont equivalentes : \\
+i) L'operateur A est unitaire.\\
+ii) L'operateur A est surjectif et $A^* \circ A = Id_E$ \\
+iii) L'operateur A est isometrique.\\
+\end{Prop}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+ $(i)\Rightarrow(ii)$ Si A est unitaire, on a $A^*\circ A = Id_E$ , nous en concluons que l'operateur A est surjectif.\\
+ $(ii)\Rightarrow(iii)$ Si $A^*\circ A = Id_E$ , alors pour tout $x \in E$ on a \\
+ 					 $||x||^2 &= < x,x > = < (A^*\circ A)x,x >$ \\
+					 $		  &= < Ax,Ax > = ||Ax||^2$ \\
+
+
+
+Cela signifie que A est une isometrie de E sur F  \\
+ $(iii)\Rightarrow(i)$ Si A est isometrie de E sur F pour tout $x \in E$ on a \\
+ 					 $< x,x > = < Ax,Ax > = < x,(A^*\circ A)x > = < (A^*\circ A)x,x >$ \\
+Cela signifie que $(A^*\circ A)x = (A^*\circ A)x = x $ , nous en concluons que A est unitaire.\\
+
+
+\begin{Ex} Soit $A: l^2(\mathbb{R}) \rightarrow l^2(\mathbb{R})$ un operateur defini par $A(x) = (x_{2n})_{n\in \mathbb{N}}$ . On a $A \in \mathscr{L}(l^2(\mathbb{R}))$ , nous cherchons l'operateur adjoint de $A^*$ . En effet, soit $x,y \in l^2(\mathbb{R})$ , alors \\
+					 $< Ax,y > &= \sum_{n\ge 0} (A x)_n y_n = \sum_{n\ge 0} x_{2n}y_n$ \\
+					 $ &= x_0 y_0 + x_2 y_1 + \ldots = \sum_{n\ge 0} x_n (A^* y)_n$ \\
+Avec \\
+				 $(A^* y)_n = \begin{cases}
+									y_{\frac{n}{2}},\quad  &si ~~ n ~~ est ~~ pair \\
+									0,  &si ~~ n ~~ est ~~ impair 
+							   \end{cases}$ \\
+
+
+\end{Ex} Soit $a \in \mathbb{R}$ , on definit l'operateur de Translation $\tau_{\alpha} : L^2(\mathbb(R)) \rightarrow L^2(\mathbb(R))$ par : $(\tau_{\alpha} f)(x) = f(x-a)$ \\
+Nous cherchons l'operateur adjoint de $\tau_{\alpha}^*$ . En effet, soit $f, g \in L^2(\mathbb{R})$ on a \\
+					 
+					 $< \tau_{\alpha} f, g > = \int_{\mathbb{R}} (\tau_{\alpha} f)(x).\overline{g(x)} dx = \int_{\mathbb{R}} f(x-a).\overline{g(x)} dx$ \\
+
+On pose y = x - a alors dy = dx et \\
+					 $< \tau_{\alpha} f,g > = \int_{\mathbb{R}} f(y).\overline{g(y + a)} dy = < f,\tau_{-\alpha} g >$ \\
+Cela signifie que $\tau_{\alpha}^* = \tau_{-\alpha}$ . On en deduit que $\tau_{\alpha}^* \neq \tau_{-\alpha}$ donc $\tau_{\alpha}$ n'est pas auto-adjoint.\\
+D'autre part pour tout $f \in L^2(\mathbb{R})$ nous avons \\
+					 $(\tau_{\alpha}^* \circ \tau_{\alpha})f = (\tau_{-\alpha} \circ \tau_{\alpha})f = f$ \\
+alors $\tau_{\alpha}^* \circ \tau_{\alpha} = \tau_{\alpha} \circ \tau_{\alpha}^* = Id$ donc l'operateur A est normal \\
+
+
+\begin{Prop} Soient A et B deux operateurs lineaire positifs sur E. Pour tout $\lambda, \mu \ge 0$ alors la combinaison lineaire $\lambda A + \mu B$ est un operateur positif.\\
+\end{Prop}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Soit $\lambda, \mu \ge 0$ alors $\lambda A + \mu B$ est auto-adjoint. Soit $x \in E$ , on a : \\
+					 $< (\lambda A + \mu B)x,x > = \lambda< Ax,x > + \mu < Bx,x > \ge 0$ \\
+donc $\lambda A + \mu B \ge 0$ \\
+
+
+
+\begin{Prop} Soit A un operateur lineaire positif defini sur E dans E. Alors A est un operateur auto-adjoint.\\
+\end{Prop}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Soit A un operateur lineaire positif alors pour tout $x \in E$ on a $< Ax,x > \ge 0$ . Cela signifie que $< Ax,x > \in \mathbb{R^+}$ donc A est un operateur auto-adjoint.\\
+
+\begin{Prop} Soit $A \in \mathscr{L}(E,F)$ . Alors les assertions suivantes sont equivalentes : \\
+i) A est isometrique \\
+ii) $A^* \circ A = Id$ \\
+\end{Prop}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Supposons que A est isometrique. Montrons que \\
+					 $< (A^* \circ A)x,y > = < x,y >$ , pour tout $x,y \in E$ \\
+Rappelons que l'identite de polarisation est donnee comme suit \\
+					 $< x,y > &= \frac{1}{4} [ (< x+y,x+y > - < x-y,x-y >) + i(< x+iy,x+iy > - < x-iy,x-iy >) ]$ \\
+					 $ 		  &= < Ax,Ax >$ \\
+Comme $||Ax|| = ||x||$ on en deduit que \\
+					 $< x,y > = < Ax,Ay > = < (A^*\circ A)x,y >$ \\
+Ca signifie que $A^* \circ A = Id$ .\\
+Supposons que $A^* \circ A = Id$ alors pour tout $x \in E$ on a \\
+					 $||x||^2 &= < x,x > = < (A^*\circ A)x,x >$ \\
+					 $&= < Ax,Ax > = ||Ax||^2$ \\
+Ce qui prouve que A est bien isometrique.\\
+
+\begin{Prop} Soit $A \in \mathscr{L}(E)$ un operateur normal, alors, $Ker(A) = Ker(A^*)$ \\
+\end{Prop}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Soit $x \in Ker(A)$ , alors \\
+					 $||A^* x||^2 &= < A^*,A^* > = < (A\circ A^*)x,x >$ \\
+					 $&= < A^*(Ax),x > = 0$ \\
+
+
+On en deduit que $A^* x = 0$ alors $x \in Ker(A^*)$ . Cela signifie $Ker(A) \subset Ker(A^*)$ \\
+Reciproquement, puisque, on a $Ker(A) \subset Ker(A^*)$ , alors \\
+					 $Ker(A^*) \subset Ker(A^*)^* = Ker(A)$ \\
+Finalement on obtient $Ker(A) = Ker(A^*)$ \\
+
+\begin{Prop} Soit $A,B \in \mathscr{L}(E)$ deux operateurs unitaires alors \\
+	a) A est isometrique.\\
+	b) $||A||_{\mathscr{L}(E)} = 1$ .\\
+	c) $A^{-1}$ et $A^*$ sont unitaires.\\
+	d) $A \circ B$ est unitaire.\\
+\end{Prop}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+a,b) Pour tout $x \in E$ on a \\
+					 $||A x|| &= < Ax,Ax > = < (A^*\circ A)x,x >$ \\
+					 $&= < x,x > = ||x||^2$ \\
+Alors $||Ax|| = ||x||$ donc A est isometrique et $||A||_{\mathscr{L}(E)} = 1$ .\\
+c) Par hypothese A est unitaire alors \\
+					 $A^* \circ (A^*)^* = A^* . A = Id $ et $(A^*)^* \circ A^* = A \circ A^* = Id$ \\
+et \\
+					 $A^* \circ (A^{-1})^* = A^{-1} \circ A^{-1} = (A\circ A^*)^{-1} = Id$ \\
+Alors l'operateur $A^{-1}$ est unitaire.\\
+d) Soient $A,B \in \mathscr{L}(E)$ deux operateur unitaires alors \\
+					 $(A\circB)^* \circ (A\circB) &= B^* \circ (A^* \circ A)\circ B$   ***\\ 
+
+					 $&= B^*\circ Id \circ A^* = A \circ A^* = Id$  ***\\
+
+					 $(A\circ B)\circ(A\circ B)^* &= A\circ(B\circ B^*)\circ A^*$ \\
+
+					 $&= A\circ Id \circ A^* = A\circ A^* = Id$ \\
+Cela signifie que $A\circ B$ est un operateur unitaire \\
+
+
+
+
+
+Remarque.  Un operateur $A \in \mathscr{L}(E)$ auto-adjoint ou unitaire est normal. Mais la reciproque est fausse.\\
+
+\textcolor{red(pigment)}{\subsection{\underline{Comparaison des operateurs}}}
+
+\begin{Def} Soient $A,B \in \mathscr{L}(E)$. On dit que $A \ge B$ si $A - B$ est un operateur positif, c'est-a-dire \\
+					 $A \ge B \Longleftrightarrow  < (A-B)x,x > \ge 0$ , pour tout $x \in E$ \\
+\end{Def}
+
+Remarque. soit E un espace de Hilbert. Alors $(\mathscr{L}(E), \ge)$ est une relation d'ordre. En effet, soit $A, B, |C \in \mathscr{L}(E)$ , on a : \\
+	i) Reflexive : $A \ge A$ , pour tout $x \in E < (A-A)x,x > = 0 \ge 0 $ \\
+	ii) Transitive : si $A \ge B$ et $B \ge C$ , pour tout $x \in E : < (A-B)x,x > \ge 0$ et $< (B-C)x,x > \ge 0$ , alors \\
+						 $0 \le < (A-B)x,x > + < (B-C)x,x > = < (A-c)x,x > $ , pour tout $x \in E$ \\
+						Cela signifie que $A \ge C$ \\
+	iii) Anti-symetrique : si $A \ge B$ et $B \ge A$ alors $< (A-B)x,x > = 0$ pour tout $x \in E$ . Cela singnifie que A = B.\\
+
+\begin{Lem} Soit $A \in \mathscr{L}(E)$ . Alors les operateurs $A\circ A^*$ et $A^*\circ A$ sont des operateurs positifs. \\
+\end{Lem}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+* Soit $A \in \mathscr{L}(E)$ , pour tout $x \in E$ , on a \\
+					 $< (A\circ A^*)x,x > &= < A^*x,A^*x >$ \\
+					 $&= ||A^*x|| \ge 0$ \\
+Ce qui implique que $A\circ A^*$ est positif.\\ * De meme, \\
+					 $< (A\circ A^*)x,x > &= < Ax,Ax >$ \\
+					 $&= ||Ax||^2 \ge 0$ \\
+Ce qui implique que $A^* \circ A$ est positif.\\
+
+\begin{Cor} Soit $A \in \mathscr{L}(E)$ un operateur auto-adjoint alors l'operateur $A^2 = A\circ A$ est un operateur positif.\\
+\end{Cor}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+
+
+Puisque A est auto-adjoint, alors $A = A^*$ et d'apres le Lemme *** , on a \\
+					 $A^2 = A \circ A = A^* \circ A = A\circ A^*$ \\
+donc $A^2$ est un operateur positif.\\
+
+\begin{Prop} Soit $A \in \mathscr{L}(E)$ un operateur positif et auto-adjoint, alors pour tout $n \in \mathbb{N}$ , l'operateur $A^n$ est positif.\\
+\end{Prop}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+ $1^{er}$ Cas : Si n est pair, c'est-a-dire $n = 2k$ , avec $k \in \mathbb{N}$ , alors l'operateur $A^k$ est auto-adjoint. D'autre part, pour tout $x \in E$ on a \\
+					 $< A^nx,x > &= < A^{2k}x,x > = < (A^k\circ A^k)x,x >$ \\
+					 $&= < A^k,(A^k)^*x > = < A^kx,A^kx > = ||A^kx||^2 \ge 0$ \\
+ $2^{ieme}$ Cas : Si n est impair, c'est-a-dire $n = 2k + 1$ , pour tout $x \in E$ on pose $y = A^k x$ alors \\
+ 					 $ < A^nx,x > &= < A^{2k+1}x,x > = < (A^k\circ A \circ A^k)x,x >$ \\
+ 					 $&= < (A\circ (A^kx).(A^k)^*x > = < A\circ(A^kx).A^kx >$ \\
+ 					 $&= < Ay,y > \ge 0$ \\
+
+\begin{The}(Theoreme de Cauchy Schwarz generalise). Soit $A \in \mathscr{L}(E)$ un operateur positif. Alors, \\
+					 $|< Ax,y >|^2 \le < Ax,x > < Ay,y >$ , pour tout $x,y \in E$ \\
+\end{The}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Pour tout $x,y \in H$ et pour tout $\lambda \in \mathbb{C}$ , on a \\
+					 $a = < A(x-\lambda y),x-\lambda y > \ge 0$ \\
+De plus, il vient \\ 
+					 $a = < Ax,x > + \lambda \overline{\lambda}< Ay,x > \overline{\lambda}< Ax,y >$ \\
+D'ou, avec A auto-adjoint, on ecrit \\
+					 $a &= |\lambda|^2 < Ay,y > - \lambda < y,Ax > - \overline{\lambda} < Ax,y > + < Ax,y >$ \\
+					 $&= < Ax,x > + |\lambda|^2< Ay,y > - \lambda < y,Ax > - \overline{\lambda < y,Ax >} \ge 0$ \\
+
+
+
+Prenons $\lambda = \frac{< Ax,y >}{< Ay,y >}$ , on obtient \\
+					 
+					 $a &= < Ax,x > + |\frac{< Ax,y >}{< Ay,y >}|^2 < Ay,y > - \frac{< Ax,y >}{< Ay,y >}< y,Ax > - \overline{\frac{< Ax,y >}{< Ay,y >} < y,Ax >}$ \\
+
+					 $&= < Ax,x > + \frac{|< Ax,y >|^2}{< Ay,y >} - \frac{1}{< Ay,y >} [ < Ax,y >< y,Ax > - \overline{< Ax,y > < y,Ax >} ]$ \\
+
+					 $&= < Ax,x > - \frac{|< Ax,y >|^2}{< Ay,y >} \ge 0$ \\
+D'ou le resultat voulu \\
+					 $< Ax,x > < Ay,y > \ge |< Ax,y >|^2$  \\ 
+
+
+\begin{The} Soit $A \in \mathscr{L}(E)$ un operateur positif tel que $||A||_{\mathscr{L}(E)} \le 1$ . Alors, l'operateur I - A est un operateur positif et $||Id - A||_{\mathscr{L}(E)} \le 1$ .\\
+\end{The}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+On definit l'operateur B par B = Id - A alors $B \in \mathscr{L}(E)$ .\\
+* Par l'inegalite de Cauchy Scchwarz pour tout $x \in E$ on a \\ 
+					 $< Bx,x > &= < (Id-A)x,x > = < x,x > - < Ax,x >$ \\
+					 $&= ||x||^2 - < Ax,x >$ \\
+					 $&\ge ||x||^2 - ||Ax|| ||x||$ \\
+					 $&\ge ||x||^2 - ||A|| ||x||^2$ \\
+					 $&= ||x||^2 (1 - ||A||) \ge 0$ \\
+Ca signifie que $**$ , pour tout $**$ d'ou l'operateur Id - A est positif.\\
+* De plus d'apres le Theoreme de Cauchy Schwarz generalise pour tout $x, y \in E$ , on a \\
+					 $|< Bx,y >|^2 &\le < Bx,x >< By,y >$ \\
+					 $&\le (< x,x > - < Ax,x >).(< y,y > - < Ay,y >)$ \\
+					 $&= (||x||^2 - < Ax,x >).(||y||^2 - < Ay,y >)$ \\
+					 $&\le ||x||^2 ||y||^2 + < Ax,x >< Ay,y > - [||x||^2 < Ay, y > + ||y||^2 < Ax,x >$ \\
+Par l'inegalite de Cauchy-Schwarz, on obtient \\
+					 $< Ax,x > < Ay,y > \le ||A||.||x||^2 < Ay,y > \le ||x||^2 < Ay,y >$ \\
+
+
+
+ Alors \\
+					 $|< Bx,y >|^2 &\le ||x||^2 ||y||^2 - ||y||^2 < Ax,x >$ \\
+					 $&\le ||x||^2 ||y||^2 - 0$ \\
+En particulier quand nous  prenons $y = B x$ , on obtient \\
+					 $| < Bx,Bx >|^2 = ||Bx||^4 \le ||x||^2 ||Bx||^2$ \\
+Ce qui donne \\
+					 $||Bx|| \le ||x||$ , pour tout $x \in E$ \\
+Cela signifie $||B||_{\mathscr{L}(E)} = ||Id - A||_{\mathscr{L}(E)} \le 1$ .\\
+
+\begin{The} Soit $(A_n)_n$ une suite auto-adjoint tel que \\
+					 $A_{n+1} \ge A_n$ , pour tout $n \in \mathbb{N}$ \\
+Si la suite $(||A_n||_{\mathscr{L}(E)})_n$ est bornee alors il existe un operateur $A \in \mathscr{L}(E)$ tel que \\
+					 $\lim_{n\to \infty} A_n x = A x$ , pour tout $x \in E$ \\
+\end{The}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+Soit $(A_n)_n \in \mathscr{L}(E)$ une suite auto-adjoint tel que $A_{n+1} \ge A_n$ , pour tout $n \in \mathbb{N}$ \\
+Soient $n,m \in \mathbb{N}$ tel que $n \ge m$ alors $A_n \ge A_m$ c'est-a-dire l'operateur $A_n - A_m$ est positif, alors pour tout $x \in E$ on a $< (A_n - A_m)x,x > \ge 0$ . Nous trouvons \\
+					 $<  A_nx,x > \ge < A_mx,x >$ , pour tout $n \in \mathbb{N}$ \\
+Alors $(< A_nx,x >)_n$ est une suite croissante. Comme la suite $(||A_n||_{\mathscr{L}(E)})_n$ est bornee, alors il existe $M > 0$ tel que \\
+					 $||A_n|| \le M$ , pour tout $n \in \mathbb{N}$ \\
+Par l'inegalite de Cauchy-Schwarz, on obtient \\ 
+					 $|< A_nx,x >| &\le ||A_nx|| ||x|| \le ||A_n|| ||x||^2$ \\
+					 $&\le M ||x||^2$ \\
+Alors la suite $(< A_nx,x >)_n$ est bornee. Cela nous donne $(< A_nx,x >)_n$ est une suite convergente, c'est-a-dire pour tout $\epsilon > 0$ il existe $n_0 \in \mathbb{N}$ tel que \\
+					 $n,m \ge n_0 : < A_nx,x > - < A_mx,x > \le \frac{\epsilon^2}{2M}$ .\\
+
+
+
+D'apres le theoreme de Cauchy Schwarz generalise, pour tout $x,y \in E$ on a \\
+					 $| < (A_n - A_m)x,y > |^2 &\le |< (A_n-A_m)y,y >|.|< (A_n-A_m)x,x >|$ \\
+					 $&\le ||(A_n-A_m)||.||y||^2.< A_nx,x > - < A_mx,x >$ \\
+					 $&\le \epsilon^2 ||y||^2$ \\
+Ce qui donne \\ 
+					 $n,m \ge n_0 : ||(A_n - A_m)x||^2 \le \epsilon$ \\
+Alors, pour tout $x \in E$ la suite $(A_nx)_n$ est de Cauchy dans l'espace de Hilbert E donc la suite $(A_nx)_n$ est convergente vers un element note Ax, i.e $\lim_{n\to \infty} A_n x = Ax$ .\\
+
+* Montrons que $A \in \mathscr{L}(E)$ . Soient $x,y \in E$ et $\lambda \in \mathbb{K}$ , on a \\
+					 $A(\lambda x + y) &= \lim_{n\to \infty} A_n(\lambda x + y) = \lambda \lim_{n\to \infty} A_n x + \lim_{n\to \infty} A_n y$ \\
+					 $&= \lambda x + A y$ \\
+Cela signifie que l'operateur A est lineaire. D'autre part \\
+					 $||A_n x|| \le ||A_n||.||x||$ , pour tout $n \le \mathbb{N}$ \\
+Par passage a la limite \\ 
+					 $||A_nx|| \le ||A_n||.||x|| \le M.||x||$ \\
+Ce qui signifie que l'operateur A est continu.\\
+
+\textcolor{red(pigment)}{\subsection{\underline{Operateur racine carree}}}
+
+\begin{Def} Soit $A \in \mathscr{L}(E)$ un operateur  positif. L'operateur positif R est dite racine carree de l'operateur A si on a la relation : \\
+					 $A = R^2 = R\circ R$   ou encore   $R = \sqrt{A}$  \\
+\end{Def}
+
+\begin{Lem} Soit $A \in \mathscr{L}(E)$ un operateur positif tel que $||A||_{\mathscr{L}(E)}$ alors la suite recurrente definie par : \\
+					 $U_1$ ,    $U_{n+1} = \frac{1}{2}(Id - A + U_n^2)$ ,   pour tout $n \in \mathbb{N}$ \\
+converge vers un operateur lineaire continu U de norme $||U||_{\mathscr{L}(E)} \le 1$ .\\
+\end{Lem}
+\begin{center}
+\underline{\textit{Démonstration :}}
+\end{center}
+
+
+
+\end{document} 
